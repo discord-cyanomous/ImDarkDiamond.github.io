@@ -72,6 +72,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#custom-commands" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -251,6 +255,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
     <a href="./" title="Custom Commands" class="md-nav__link md-nav__link--active">
       Custom Commands
@@ -385,6 +391,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Tags/Getting Started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Tags/Guild/" title="Guild" class="md-nav__link">
       Guild
     </a>
@@ -463,15 +481,68 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Custom Commands</h1>
-                
-                
+                <h1 id="custom-commands">Custom Commands</h1>
+<p>Custom commands allow you to have arcane respond.  </p>
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">hello</span><span class="o">-</span><span class="n">world</span>
+<span class="n">Response</span><span class="o">:</span> <span class="n">Hi</span><span class="o">,</span> <span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">mention</span><span class="o">}</span>
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span><span class="o">:</span> <span class="n">Hi</span> <span class="err">@</span><span class="n">ImDarkDiamond</span>
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To use custom commands to their fullest ability please visit our <a href="/Tags/Getting%20Started/">tag documentation</a></p>
+</div>
+<h1 id="examples">Examples</h1>
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">givestaff</span>
+<span class="n">Response</span><span class="o">:</span> <span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">mention</span><span class="o">},</span> <span class="n">I</span> <span class="n">have</span> <span class="n">given</span> <span class="n">you</span> <span class="n">the</span> <span class="o">**</span><span class="n">Staff</span><span class="o">**</span> <span class="n">role</span><span class="o">.</span> <span class="o">{</span><span class="n">addrole</span><span class="o">:</span><span class="n">Staff</span><span class="o">}</span> 
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span><span class="o">:</span> <span class="err">@</span><span class="n">ImDarkDiamond</span><span class="o">,</span> <span class="n">I</span> <span class="n">have</span> <span class="n">given</span> <span class="n">you</span> <span class="n">the</span> <span class="o">**</span><span class="n">Staff</span><span class="o">**</span> <span class="n">role</span><span class="o">.</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">count</span>
+<span class="n">Response</span><span class="o">:</span> <span class="n">arparse</span> <span class="o">{</span><span class="n">db</span><span class="o">.</span><span class="na">set</span><span class="o">:</span><span class="n">count_</span><span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">id</span><span class="o">}:{</span><span class="n">add</span><span class="o">:{</span><span class="n">db</span><span class="o">.</span><span class="na">get</span><span class="o">:</span><span class="n">count_</span><span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">id</span><span class="o">}|</span><span class="mi">0</span><span class="o">}+</span><span class="mi">1</span><span class="o">}}</span> <span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">mention</span><span class="o">},</span> <span class="n">you</span> <span class="n">have</span> <span class="n">counted</span> <span class="o">{</span><span class="n">db</span><span class="o">.</span><span class="na">get</span><span class="o">:</span><span class="n">count_</span><span class="o">{</span><span class="n">member</span><span class="o">.</span><span class="na">id</span><span class="o">}|</span><span class="mi">0</span><span class="o">}</span> <span class="n">times</span>
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span> <span class="n">after</span> <span class="mi">10</span> <span class="n">uses</span><span class="o">:</span> <span class="err">@</span><span class="n">ImDarkDiamond</span><span class="o">,</span> <span class="n">you</span> <span class="n">have</span> <span class="n">counted</span> <span class="mi">10</span> <span class="n">times</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">choose</span>
+<span class="n">Response</span><span class="o">:</span> <span class="o">{</span><span class="n">choose</span><span class="o">:{</span><span class="n">args</span><span class="o">}}</span>
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span> <span class="k">with</span> <span class="n">the</span> <span class="n">input</span> <span class="s2">&quot;test|test1&quot;</span><span class="o">:</span> <span class="n">test</span> 
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">say</span>
+<span class="n">Response</span><span class="o">:</span> <span class="o">{</span><span class="n">args</span><span class="o">}</span>
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span> <span class="k">with</span> <span class="n">the</span> <span class="n">input</span> <span class="s2">&quot;Hello World&quot;</span><span class="o">:</span> <span class="n">Hello</span> <span class="n">World</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="n">random</span>
+<span class="n">Response</span><span class="o">:</span> <span class="o">{</span><span class="n">range</span><span class="o">:{</span><span class="n">args</span><span class="o">}}</span>
+<span class="n">Arcane</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Response</span> <span class="k">with</span> <span class="n">the</span> <span class="n">input</span> <span class="s2">&quot;1-250452&quot;</span><span class="o">:</span> <span class="mi">1580</span>
+</pre></div>
                 
                   
                 

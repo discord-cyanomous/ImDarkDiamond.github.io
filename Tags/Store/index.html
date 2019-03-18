@@ -382,6 +382,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Getting Started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Guild/" title="Guild" class="md-nav__link">
       Guild
     </a>
@@ -487,6 +499,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dbremaining" title="db.remaining" class="md-nav__link">
+    db.remaining
+  </a>
+  
+</li>
+      
       
       
       
@@ -568,6 +587,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dbremaining" title="db.remaining" class="md-nav__link">
+    db.remaining
+  </a>
+  
+</li>
+      
       
       
       
@@ -605,7 +631,10 @@
 
 <h3 id="dbget">db.get</h3>
 <p>Get a value by the key</p>
-<div class="codehilite"><pre><span></span>{db.get:test} -&gt; 5
+<div class="codehilite"><pre><span></span>{db.get:test|6} -&gt; 5
+
+If there is no &quot;test&quot;:
+{db.get:test|6} -&gt; 6
 </pre></div>
 
 
@@ -618,6 +647,12 @@
 <h3 id="dbkeys">db.keys</h3>
 <p>Provides how many keys are stored in the guilds tag store. Each guild is limited to <strong>1,000</strong> keys. </p>
 <div class="codehilite"><pre><span></span>{db.keys} -&gt; 152
+</pre></div>
+
+
+<h3 id="dbremaining">db.remaining</h3>
+<p>Provides how many keys are remaining in the tag store. Each guild is limited to <strong>1,000</strong> keys. </p>
+<div class="codehilite"><pre><span></span>{db.remaining} -&gt; 848
 </pre></div>
                 
                   
